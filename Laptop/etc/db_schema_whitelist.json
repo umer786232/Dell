@@ -1,0 +1,37 @@
+{
+    "sales_order": {
+        "column": {
+            "clearance": true
+        }
+    },
+    "sales_order_grid": {
+        "column": {
+            "clearance": true
+        }
+    },
+    "quote": {
+        "column": {
+            "clearance": true
+        }
+    },
+    "quote_item": {
+        "column": {
+            "clearance": true
+        }
+    },
+    "sales_invoice": {
+        "column": {
+            "clearance": true
+        }
+    },
+    "sales_order_item": {
+        "column": {
+            "clearance": true
+        }
+    },
+    "sales_invoice_item": {
+        "column": {
+            "clearance": true
+        }
+    }
+}

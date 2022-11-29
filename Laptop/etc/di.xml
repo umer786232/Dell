@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <virtualType name="Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\Pool">
+        <arguments>
+            <argument name="modifiers" xsi:type="array">
+                <item name="admin_name" xsi:type="array">
+                    <item name="class" xsi:type="string">Dell\Laptop\Ui\DataProvider\Product\Form\Modifier\Attributes</item>
+                    <item name="sortOrder" xsi:type="number">1000</item>
+                </item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+        <virtualType name="Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\Pool" type="Magento\Ui\DataProvider\Modifier\Pool">
+            <arguments>
+                <argument name="modifiers" xsi:type="array">
+                    <item name="newFields" xsi:type="array">
+                        <item name="class" xsi:type="string">Dell\Laptop\Ui\DataProvider\Product\Form\Modifier\CustomContent</item>
+                        <item name="sortOrder" xsi:type="number">40</item>
+                    </item>
+                </argument>
+            </arguments>
+        </virtualType>
+
+
+    <virtualType name="Dell\Laptop\Model\ResourceModel\Grid\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">magecomp_customtable</argument>
+            <argument name="resourceModel" xsi:type="string">Dell\Laptop\Model\ResourceModel\Custom</argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="grid_record_grid_list_data_source" xsi:type="string">Dell\Laptop\Model\ResourceModel\Grid\Grid\Collection</item>
+            </argument>
+
+        </arguments>
+    </type>
+
+     <!--Sync the sales_order_item table and sales_order_grid-->
+    <virtualType name="Magento\Sales\Model\ResourceModel\Order\Grid" type="Magento\Sales\Model\ResourceModel\Grid">
+        <arguments>
+            <argument name="columns" xsi:type="array">
+                <item name="clearance_item" xsi:type="string">sales_order.clearance_item</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+ <type name='Magento\Quote\Model\Quote\Item\ToOrderItem'>
+        <plugin name='AddOrderItemPlugin' type='Dell\Laptop\Plugin\Model\Quote\Item\ToOrderItem' sortOrder='99'/>
+    </type>
+
+    <preference for="Magento\Sales\Block\Adminhtml\Order\Create\Items\Grid" type="Dell\Laptop\Block\Adminhtml\Order\Create\Items\Grid" />
+    <preference for="Magento\Sales\Controller\Adminhtml\Order\Create\index" type="Dell\Laptop\Controller\Adminhtml\Order\Create\index" />
+    <!-- show in pdf -->
+    <preference for="Magento\Sales\Model\Order\Pdf\Invoice" type="Dell\Laptop\Model\Order\Pdf\Invoice" />
+    <preference for="Magento\Sales\Model\Order\Pdf\Items\Invoice\DefaultInvoice" type="Dell\Laptop\Model\Order\Pdf\Items\Invoice\DefaultInvoice" />
+   <preference for="Magento\Bundle\Model\Sales\Order\Pdf\Items\Invoice" type="Dell\Laptop\Model\Sales\Order\Pdf\Items\Invoice" />
+    <!-- customer create password update -->
+    <preference for="Magento\Customer\view\frontend\templates\form\register" type="Dell\Laptop\view\frontend\templates\form\register" />
+  <!-- add clearance in email  -->
+    <preference for="Magento\Sales\view\frontend\templates\email\items" type="Dell\Laptop\view\frontend\templates\email\items" />
+    <preference for="Magento\Sales\view\frontend\templates\email\items\order\default" type="Dell\Laptop\view\frontend\templates\email\items\order\default" />
+
+</config>

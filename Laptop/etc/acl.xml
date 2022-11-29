@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Dell_Laptop::view" title="Magecomp" sortOrder="50">
+                    <resource id="Dell_Laptop::menu" title="Manage Grid" sortOrder="20"/>
+                    <resource id="Dell_Laptop::edit" title="Manage edit" sortOrder="20"/>
+                    <resource id="Dell_Laptop::add" title="Manage add" sortOrder="20"/>
+                    <resource id="Dell_Laptop::delete" title="Manage delete" sortOrder="20"/>
+                    <resource id="Dell_Laptop::job" title="admin job" sortOrder="20"/>
+
+                </resource>
+
+            </resource>
+        </resources>
+    </acl>
+</config>

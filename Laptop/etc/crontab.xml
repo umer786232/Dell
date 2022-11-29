@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
+    <group id="default">
+        <job name="my_cron_job" instance="Dell\Laptop\Cron\Cronfile" method="execute">
+            <!-- <config_path>crontab/default/jobs/my_cron_job/schedule/cron_expr</config_path> -->
+            <schedule>15 13 * * * sh /home/umer/Downloads/Bathroommountain/bm.co.pk/app/code/Dell/Laptop/Cron/Cronfile</schedule>
+        </job>
+    </group>
+    <!-- <group id="default">
+        <job name="my_cron_job_percentage" instance="Dell\Laptop\Cron\Cronfileup" method="execute">
+            
+            <!- - <schedule>2 * * * *</schedule> - ->
+        </job>
+    </group> -->
+</config>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="catalog_product_save_after">
+        <observer name="observer_name" instance="Dell\Laptop\Observer\ProductSaveAfter" />
+    </event>
+    <!-- <event name="sales_order_save_after">
+    <observer instance="Dell\Laptop\Observer\SetOrderAttribute" name="set_clearance_item"/>
+    </event> -->
+
+    <!-- adminhtml_sales_order_create_process_data_after -->
+    <event name="sales_order_invoice_save_after">
+        <observer name="magento_orderevent_create" instance="Dell\Laptop\Observer\OrderObserver" />
+    </event>
+    <!-- <event name="sales_model_service_quote_submit_before">
+        <observer name="save_custom_fee" instance="Dell\Laptop\Observer\AddCustomFee" />
+    </event> -->
+</config>

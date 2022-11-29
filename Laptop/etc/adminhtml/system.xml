@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="job" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Attribute</label>
+            <tab>catalog</tab>
+            <resource>Dell_Laptop::job</resource>
+            <group id="general" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Attributes Options</label>
+                <field id="admin_name" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Name Autosave</label>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                </field>
+            </group>
+            <group id="configurable_cron"
+                    translate="label"
+                    type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Cron Settings</label>
+                <field id="frequency"
+                    translate="label"
+                    type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Frequency</label>
+                    <source_model>Magento\Cron\Model\Config\Source\Frequency</source_model>
+                    <backend_model>Dell\Laptop\Model\Config\Cronconfig</backend_model>
+                </field>
+                <field id="time" 
+                    translate="label comment"
+                    sortOrder="2" type="time" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Start Time</label>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Backend/etc/menu.xsd">
+
+    <menu>
+
+        <add id="Dell_Laptop::view" title="Magecomp" module="Dell_Laptop" sortOrder="50" resource="Dell_Laptop::view"/>
+
+        <add id="Dell_Laptop::menu" title="Manage Grid" module="Dell_Laptop" sortOrder="20" parent="Dell_Laptop::view" action="uiexample/index/index" resource="Dell_Laptop::menu"/>
+
+    </menu>
+
+</config>
